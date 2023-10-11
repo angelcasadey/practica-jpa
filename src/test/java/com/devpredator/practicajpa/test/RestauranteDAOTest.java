@@ -33,13 +33,21 @@ class RestauranteDAOTest {
 		this.restauranteDAO.guardar(restaurante);
 	}
 	
+	/**
+	 * Test method for
+	 * {@link persistenceDevPredator.dao.impl.RestauranteDAOImpl#actualizar(persistenceDevPredator.entity.Restaurante)}
+	 */
 	@Test
 	void testActualizar() {
-		Restaurante restauranteConsultado = this.restauranteDAO.consultarById(14L);
+		Restaurante restauranteConsultado = this.restauranteDAO.consultarById(15L);
 		restauranteConsultado.setNombre("El Cardenal");
 		this.restauranteDAO.actualizar(restauranteConsultado);
 	}
 	
+	/**
+	 * Test method for
+	 * {@link persistenceDevPredator.dao.impl.RestauranteDAOImpl#eliminar(persistenceDevPredator.entity.Restaurante)}
+	 */
 	@Test
 	void testEliminar() {
 		Long id = 14L;
@@ -47,10 +55,13 @@ class RestauranteDAOTest {
 		this.restauranteDAO.eliminar(id);
 	}
 	
-	
+	/**
+	 * Test method for
+	 * {@link persistenceDevPredator.dao.impl.RestauranteDAOImpl#consultar(persistenceDevPredator.entity.Restaurante)}
+	 */
 	@Test
 	void testConsultarById() {
-		Restaurante restaurante = this.restauranteDAO.consultarById(15L);
+		Restaurante restaurante = this.restauranteDAO.consultarById(14L);
 		assertNotNull(restaurante);
 		System.out.println("Restaurante: " + restaurante.getNombre());
 	}
